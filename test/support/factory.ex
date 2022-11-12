@@ -27,4 +27,16 @@ defmodule FlightBookingReport.Factory do
       user_id: user_id
     }
   end
+
+  def report_factory do
+    build(:booking, complete_date: complete_date_sequence(), user_id: user_id_sequence())
+  end
+
+  defp complete_date_sequence() do
+    sequence(:complete_date, &NaiveDateTime.from_iso8601!("2023-01-0#{&1} 00:00:00"), start_at: 1)
+  end
+
+  defp user_id_sequence() do
+    sequence(:complete_date, & &1, start_at: 1)
+  end
 end
