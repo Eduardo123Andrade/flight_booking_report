@@ -15,7 +15,7 @@ defmodule FlightBookingReport.Report.ReportTest do
     test "when initial date and final date is given, create the report file" do
       initial_date = ~N[2023-01-01 00:00:00]
       final_date = ~N[2023-01-03 00:00:00]
-      filename = "report.csv"
+      filename = "report_test.csv"
 
       :booking
       |> build(complete_date: ~N[2023-01-01 00:00:00], user_id: 1)
